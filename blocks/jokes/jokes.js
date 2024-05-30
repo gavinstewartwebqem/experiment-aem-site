@@ -1,7 +1,12 @@
 async function getRandomeJokes() {
-    const response = await fetch("https://official-joke-api.appspot.com/random_ten");
-    const jokes = await response.json();
-    return jokes
+    try {
+        const response = await fetch("https://official-joke-api.appspot.com/random_tens");
+        const jokes = await response.json();
+        return jokes    
+    } catch (error) {
+        console.error(error)
+    }
+    
 }
 
 
